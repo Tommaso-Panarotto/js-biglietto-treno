@@ -38,3 +38,8 @@ if (isKilometresInvalid || isAgeInvalid) {
     //ricarico la pagina
     location.reload();
 }
+
+//calcolo costo bieglietto
+const userPrice = (userKilometres * 0.21).toFixed(2);
+
+console.log('il costo del tuo biglietto é: €' + userPrice);
