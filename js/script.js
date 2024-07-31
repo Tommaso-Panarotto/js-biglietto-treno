@@ -19,13 +19,8 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 //Fase raccolta dati
 //chilometri da percorrere
 const userKilometres = parseInt(prompt('Quanti chilometri vuoi percorrere?', 10));
-const isNumberInvalid = isNaN(userKilometres) || userKilometres < 1;
-if (isNumberInvalid) {
-    //errore
-    alert('Non valido almeno maggiore o uguale a 1');
+console.log('vuoi percorrere', userKilometres, 'Km');
 
-    //ricarico la pagina
-    location.reload();
-} else {
-    console.log('vuoi percorrere', userKilometres, 'Km')
-}
+//Età utente
+const userAge = parseInt(prompt('Quanti anni hai?', 26));
+console.log('hai', userAge, 'anni');
