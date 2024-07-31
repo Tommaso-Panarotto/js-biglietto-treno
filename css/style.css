@@ -25,3 +25,13 @@ body {
 .navbar a {
     color: white;
 }
+
+/*Main*/
+.trip::before,
+.trip::after {
+    content: '';
+    display: inline-block;
+    background-color: #fff;
+    border-bottom: 1px dashed;
+    width: 100px;
+}
