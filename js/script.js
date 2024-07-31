@@ -5,7 +5,8 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
   va applicato uno sconto del 20% per i minorenni
   va applicato uno sconto del 40% per gli over 65.
 *Nota
-L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
+L'output del prezzo finale va messo fuori in forma umana 
+(con massimo due decimali, per indicare centesimi sul prezzo).
 */
 
 /*
@@ -40,6 +41,14 @@ if (isKilometresInvalid || isAgeInvalid) {
 }
 
 //calcolo costo bieglietto
-const userPrice = (userKilometres * 0.21).toFixed(2);
+let userPrice = userKilometres * 0.21;
 
-console.log('il costo del tuo biglietto é: €' + userPrice);
+//Applicazione eventuali sconti
+if (userAge < 18) {
+    userPrice += - (userPrice * 0.2)
+} else if (userAge > 65) {
+    userPrice += - (userPrice * 0.4)
+}
+
+//mostro il prezzo
+console.log('il costo del tuo biglietto é: €' + userPrice.toFixed(2));
