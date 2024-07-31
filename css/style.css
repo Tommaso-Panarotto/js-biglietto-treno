@@ -10,8 +10,18 @@ body {
     font-family: sans-serif;
 }
 
+.navbar h1 {
+    font-size: 30px;
+}
+
 /* Utils */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+
+/*BG Color*/
+.bg-red {
+    background-color: #A6160A;
+}
+
+/*Header*/
+.navbar a {
+    color: white;
 }
