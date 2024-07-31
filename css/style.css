@@ -33,5 +33,10 @@ body {
     display: inline-block;
     background-color: #fff;
     border-bottom: 1px dashed;
-    width: 100px;
+    width: 60px;
+}
+
+.info>div {
+    flex-basis: calc(100% / 3);
+    text-align: end;
 }

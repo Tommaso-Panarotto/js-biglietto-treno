@@ -10,12 +10,21 @@ L'output del prezzo finale va messo fuori in forma umana
 */
 
 /*
+0. Recupero gli elementi dal DOM
 1. Chiedo all'utente quanti chilometri vuole percorrere
 2. Chiedo all'utente la sua età
 3. Calcolo il costo del biglietto
 4. Applico al costo del biglietto eventuali sconti
 5. Mostro il prezzo del biglietto
+6. Inserisco gli elementi nel DOM
  */
+
+//Fase preparatoria
+//Recupero gli elemnti in pagina
+const resultkilometres = document.getElementById('kilometres');
+const resultAge = document.getElementById('age');
+const resultPrice = document.getElementById('total-price');
+const resultSale = document.getElementById('sale');
 
 //Fase raccolta dati
 //chilometri da percorrere
@@ -40,15 +49,29 @@ if (isKilometresInvalid || isAgeInvalid) {
     location.reload();
 }
 
+//Fase di elaborazione
 //calcolo costo bieglietto
 let userPrice = userKilometres * 0.21;
 
 //Applicazione eventuali sconti
 if (userAge < 18) {
+    //calcolo sconto minori
     userPrice += - (userPrice * 0.2)
+
+    //mostro Sconto
+    resultSale.innerText = '20% di sconto'
 } else if (userAge > 65) {
+    //calcolo sconto pensionati
     userPrice += - (userPrice * 0.4)
+
+    //mostro sconto
+    resultSale.innerText = '40% di sconto'
 }
 
 //mostro il prezzo
 console.log('il costo del tuo biglietto é: €' + userPrice.toFixed(2));
+
+//mostro i dati
+resultAge.innerText = `Hai ${userAge} anni`;
+resultkilometres.innerText = `Fai ${userKilometres} Km`;
+resultPrice.innerText = userPrice.toFixed(2) + '€';

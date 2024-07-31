@@ -43,27 +43,31 @@
     </nav>
 
     <main class="container mt-5 bg-white">
-        <div class="d-flex p-3 gap-2">
-            <div class="partenza"><b class="fs-3 text-success">16.00</b>
-                <h5>Milano Centrale</h5>
+        <div class="d-flex p-3 gap-4">
+            <div class="station flex-wrap w-50 d-flex gap-2">
+                <div class="partenza"><b class="fs-3 text-success">16.00</b>
+                    <h5>Milano Centrale</h5>
+                </div>
+                <div class="tempo pt-2">
+                    <div class="trip d-flex flex-wrap align-items-center gap-1">60min</div>
+                </div>
+                <div class="arrivo"><b class="fs-3 text-success">17.00</b>
+                    <h5>Torino Porta Nuova</h5>
+                </div>
             </div>
-            <div class="tempo pt-2">
-                <div class="trip d-flex align-items-center gap-1">60min</div>
-            </div>
-            <div class="arrivo"><b class="fs-3 text-success">17.00</b>
-                <h5>Torino Porta Nuova</h5>
-            </div>
-            <div class="kilometres pt-2"></div>
-            <div class="age pt-2"></div>
-            <div class="price">
-                <h4 class="total-price"></h4>
-                <div class="sale"></div>
+            <div class="info flex-wrap d-flex w-50 align-items-center">
+                <div id="kilometres"></div>
+                <div id="age"></div>
+                <div class="price">
+                    <h3 id="total-price" class="text-danger"></h3>
+                    <div id="sale"></div>
+                </div>
             </div>
         </div>
     </main>
 
     <!--JS-->
-    <!--<script src="js/script.js"></script>-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
