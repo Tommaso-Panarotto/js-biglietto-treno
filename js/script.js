@@ -15,3 +15,17 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 4. Applico al costo del biglietto eventuali sconti
 5. Mostro il prezzo del biglietto
  */
+
+//Fase raccolta dati
+//chilometri da percorrere
+const userKilometres = parseInt(prompt('Quanti chilometri vuoi percorrere?', 10));
+const isNumberInvalid = isNaN(userKilometres) || userKilometres < 1;
+if (isNumberInvalid) {
+    //errore
+    alert('Non valido almeno maggiore o uguale a 1');
+
+    //ricarico la pagina
+    location.reload();
+} else {
+    console.log('vuoi percorrere', userKilometres, 'Km')
+}
