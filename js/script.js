@@ -24,3 +24,17 @@ console.log('vuoi percorrere', userKilometres, 'Km');
 //Età utente
 const userAge = parseInt(prompt('Quanti anni hai?', 26));
 console.log('hai', userAge, 'anni');
+
+//Validazione
+const isKilometresInvalid = isNaN(userKilometres) || userKilometres < 1;
+const isAgeInvalid = isNaN(userAge) || userAge < 14;
+
+if (isKilometresInvalid || isAgeInvalid) {
+    //errore
+    const errorMessage = isKilometresInvalid ? 'i chilometri almeno maggiore o uguale a 1'
+        : 'i minori di 14 non possono viaggiare senza accompagnatore';
+    alert(errorMessage);
+
+    //ricarico la pagina
+    location.reload();
+}
