@@ -52,20 +52,23 @@ if (isKilometresInvalid || isAgeInvalid) {
 //Fase di elaborazione
 //calcolo costo bieglietto
 let userPrice = userKilometres * 0.21;
-
 //Applicazione eventuali sconti
 if (userAge < 18) {
+    resultSale.innerHTML = `<del class="text-danger">€${userPrice}</del>`;
+
     //calcolo sconto minori
-    userPrice += - (userPrice * 0.2)
+    userPrice *= 0.8;
 
     //mostro Sconto
-    resultSale.innerText = '20% di sconto'
+    resultSale.innerHTML += " " + '20% di sconto'
 } else if (userAge > 65) {
+    resultSale.innerHTML = `<del class="text-danger">€${userPrice}</del>`;
+
     //calcolo sconto pensionati
-    userPrice += - (userPrice * 0.4)
+    userPrice *= 0.6;
 
     //mostro sconto
-    resultSale.innerText = '40% di sconto'
+    resultSale.innerHTML += " " + '40% di sconto'
 }
 
 //mostro il prezzo
